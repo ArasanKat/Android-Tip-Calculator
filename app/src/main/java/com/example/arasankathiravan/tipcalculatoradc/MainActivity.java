@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText totalBillAmount;
 
     Double money;
-    Double totalWithTip;
+    Double totalTip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         twentyFivePercent = (Button)findViewById(R.id.twentyFivePercent);
         total = (TextView)findViewById(R.id.total);
 
-        totalWithTip = 1.00;
+        totalTip = 1.00;
 
         fifteenPercent.setOnClickListener(this);
         twentyPercent.setOnClickListener(this);
@@ -79,21 +79,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         money = Double.parseDouble(totalBillAmount.getText().toString());
 
         if (view.getId() == fifteenPercent.getId()){
-            totalWithTip = money * .15;
-            totalWithTip = Math.round(totalWithTip *100.0) / 100.0;
-            total.setText("$" +totalWithTip.toString());
+            totalTip = money * .15;
+            totalTip = Math.round(totalTip *100.0) / 100.0;
+            total.setText("$" +totalTip.toString());
         }
 
         if (view.getId() == twentyPercent.getId()){
-            totalWithTip = money * .2;
-            totalWithTip = Math.round(totalWithTip *100.0) / 100.0;
-            total.setText("$" + totalWithTip.toString());
+            totalTip = money * .2;
+            totalTip = Math.round(totalTip *100.0) / 100.0;
+            total.setText("$" + totalTip.toString());
         }
 
         if (view.getId() == twentyFivePercent.getId()){
-            totalWithTip = money * .25;
-            totalWithTip = Math.round(totalWithTip *100.0) / 100.0;
-            total.setText("$" + totalWithTip.toString());
+            totalTip = money * .25;
+            totalTip = Math.round(totalTip *100.0) / 100.0;
+            total.setText("$" + totalTip.toString());
         }
     }
 }
